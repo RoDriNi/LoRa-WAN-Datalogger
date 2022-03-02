@@ -1,0 +1,404 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x52d8757e, pid=14780, tid=0x00002f28
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_191-b12) (build 1.8.0_191-b12)
+# Java VM: Java HotSpot(TM) Client VM (25.191-b12 mixed mode windows-x86 )
+# Problematic frame:
+# V  [jvm.dll+0xe757e]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x29cb1800):  JavaThread "EventThread COM4" [_thread_in_vm, id=12072, stack(0x02b70000,0x02bc0000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000000
+
+Registers:
+EAX=0x00000000, EBX=0x27b4e610, ECX=0x29cb1800, EDX=0x0000009f
+ESP=0x02bb57bc, EBP=0x02bb57d8, ESI=0x00000000, EDI=0x29cb1800
+EIP=0x52d8757e, EFLAGS=0x00010246
+
+Top of Stack: (sp=0x02bb57bc)
+0x02bb57bc:   02bb57f4 29cb1940 27b4e610 29cb1800
+0x02bb57cc:   27edf61c 0000009f 52f85568 02bbf498
+0x02bb57dc:   6400183d 29cb1940 00000000 00000000
+0x02bb57ec:   00009c5e 02bb57f4 200a0d30 302e3134
+0x02bb57fc:   200a0d30 392e3034 200a0d30 392e3034
+0x02bb580c:   200a0d30 302e3134 200a0d30 302e3134
+0x02bb581c:   200a0d30 332e3134 200a0d30 322e3134
+0x02bb582c:   200a0d30 332e3134 200a0d30 332e3134 
+
+Instructions: (pc=0x52d8757e)
+0x52d8755e:   c4 08 83 7f 04 00 89 7d f0 c7 45 f4 00 00 00 00
+0x52d8756e:   74 08 8d 4d f0 e8 e8 34 0c 00 8b 75 10 8b 45 0c
+0x52d8757e:   8b 10 85 f6 78 32 8b 45 14 85 c0 78 2b 8d 0c 06
+0x52d8758e:   3b 4a 08 77 23 85 c0 7e 3b 8b 4a 04 8b 49 04 83 
+
+
+Register to memory mapping:
+
+EAX=0x00000000 is an unknown value
+EBX=0x27b4e610 is an unknown value
+ECX=0x29cb1800 is a thread
+EDX=0x0000009f is an unknown value
+ESP=0x02bb57bc is pointing into the stack for thread: 0x29cb1800
+EBP=0x02bb57d8 is pointing into the stack for thread: 0x29cb1800
+ESI=0x00000000 is an unknown value
+EDI=0x29cb1800 is a thread
+
+
+Stack: [0x02b70000,0x02bc0000],  sp=0x02bb57bc,  free space=277k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0xe757e]
+C  [jSSC-2.8_x86.dll+0x183d]
+J 2860  jssc.SerialNativeInterface.readBytes(JI)[B (0 bytes) @ 0x031445e5 [0x03144550+0x95]
+J 7647 C1 jssc.SerialPort$EventThread.run()V (84 bytes) @ 0x02e8ff30 [0x02e8fcc0+0x270]
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x15c315]
+V  [jvm.dll+0x223ece]
+V  [jvm.dll+0x15c3ae]
+V  [jvm.dll+0x15c536]
+V  [jvm.dll+0x15c5a7]
+V  [jvm.dll+0x1002ef]
+V  [jvm.dll+0x17f550]
+V  [jvm.dll+0x17fdca]
+V  [jvm.dll+0x1c57a6]
+C  [msvcr100.dll+0x5c556]
+C  [msvcr100.dll+0x5c600]
+C  [KERNEL32.DLL+0x1fa29]
+C  [ntdll.dll+0x67a9e]
+C  [ntdll.dll+0x67a6e]
+C  0x00000000
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J 2860  jssc.SerialNativeInterface.readBytes(JI)[B (0 bytes) @ 0x031445a1 [0x03144550+0x51]
+J 7647 C1 jssc.SerialPort$EventThread.run()V (84 bytes) @ 0x02e8ff30 [0x02e8fcc0+0x270]
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+=>0x29cb1800 JavaThread "EventThread COM4" [_thread_in_vm, id=12072, stack(0x02b70000,0x02bc0000)]
+  0x29cb3000 JavaThread "DestroyJavaVM" [_thread_blocked, id=13012, stack(0x02a10000,0x02a60000)]
+  0x29cb5400 JavaThread "TimerQueue" daemon [_thread_blocked, id=15804, stack(0x2b120000,0x2b170000)]
+  0x283b5800 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=16480, stack(0x2abb0000,0x2ac00000)]
+  0x283b6800 JavaThread "AWT-Shutdown" [_thread_blocked, id=13216, stack(0x29820000,0x29870000)]
+  0x283b6400 JavaThread "Batik CleanerThread" daemon [_thread_blocked, id=15772, stack(0x295c0000,0x29610000)]
+  0x282b2800 JavaThread "JmDNS(192-168-25-31.local.).State.Timer" [_thread_blocked, id=13552, stack(0x29350000,0x293a0000)]
+  0x2829d800 JavaThread "JmDNS(192-168-25-31.local.).Timer" daemon [_thread_blocked, id=10020, stack(0x292c0000,0x29310000)]
+  0x2686e000 JavaThread "Multihomed mDNS.Timer" daemon [_thread_blocked, id=8624, stack(0x26f60000,0x26fb0000)]
+  0x2686f400 JavaThread "cc.arduino.packages.discoverers.serial.SerialDiscovery" [_thread_blocked, id=7764, stack(0x28da0000,0x28df0000)]
+  0x26ae8000 JavaThread "AWT-Windows" daemon [_thread_in_native, id=1212, stack(0x26ff0000,0x27040000)]
+  0x26ae6800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=13588, stack(0x26ed0000,0x26f20000)]
+  0x254f7c00 JavaThread "Service Thread" daemon [_thread_blocked, id=12548, stack(0x26750000,0x267a0000)]
+  0x254d1000 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=13316, stack(0x266c0000,0x26710000)]
+  0x254cec00 JavaThread "Attach Listener" daemon [_thread_blocked, id=13644, stack(0x26630000,0x26680000)]
+  0x254cd000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=13352, stack(0x265a0000,0x265f0000)]
+  0x254bcc00 JavaThread "Finalizer" daemon [_thread_blocked, id=2056, stack(0x263f0000,0x26440000)]
+  0x254b6c00 JavaThread "Reference Handler" daemon [_thread_blocked, id=4412, stack(0x26360000,0x263b0000)]
+
+Other Threads:
+  0x254a1c00 VMThread [stack: 0x262d0000,0x26320000] [id=15856]
+  0x25503c00 WatcherThread [stack: 0x267e0000,0x26830000] [id=16628]
+
+VM state:synchronizing (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x02a6d728] Threads_lock - owner thread: 0x254a1c00
+[0x02a6d4b8] Heap_lock - owner thread: 0x283b5800
+
+Heap:
+ def new generation   total 157248K, used 157247K [0x04e00000, 0x0f8a0000, 0x0f8a0000)
+  eden space 139776K, 100% used [0x04e00000, 0x0d680000, 0x0d680000)
+  from space 17472K,  99% used [0x0e790000, 0x0f89ffe8, 0x0f8a0000)
+  to   space 17472K,   0% used [0x0d680000, 0x0d680000, 0x0e790000)
+ tenured generation   total 349568K, used 349567K [0x0f8a0000, 0x24e00000, 0x24e00000)
+   the space 349568K,  99% used [0x0f8a0000, 0x24dffff8, 0x24e00000, 0x24e00000)
+ Metaspace       used 25388K, capacity 25915K, committed 25984K, reserved 25984K
+
+Card table byte_map: [0x24e00000,0x24f10000] byte_map_base: 0x24dd9000
+
+Polling page: 0x011a0000
+
+CodeCache: size=32768Kb used=2960Kb max_used=4955Kb free=29807Kb
+ bounds [0x02ca0000, 0x03178000, 0x04ca0000]
+ total_blobs=1702 nmethods=1401 adapters=226
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 57806.187 Thread 0x254d1000 39744             java.util.Arrays::copyOf (46 bytes)
+Event: 57806.187 Thread 0x254d1000 nmethod 39744 0x02fcbe08 code [0x02fcbf30, 0x02fcc1d4]
+Event: 57808.193 Thread 0x254d1000 39745             sun.awt.windows.WToolkit::needUpdateWindow (2 bytes)
+Event: 57808.193 Thread 0x254d1000 nmethod 39745 0x02e29948 code [0x02e29a40, 0x02e29ac0]
+Event: 57810.420 Thread 0x254d1000 39746             javax.swing.JToggleButton$ToggleButtonModel::isSelected (15 bytes)
+Event: 57810.421 Thread 0x254d1000 nmethod 39746 0x02e8ac48 code [0x02e8ad40, 0x02e8ade0]
+Event: 57810.467 Thread 0x254d1000 39747             sun.font.FontUtilities::isComplexText (38 bytes)
+Event: 57810.468 Thread 0x254d1000 nmethod 39747 0x02e50408 code [0x02e50510, 0x02e5065c]
+Event: 57821.805 Thread 0x254d1000 39748             java.awt.EventQueue::postEvent (13 bytes)
+Event: 57821.806 Thread 0x254d1000 nmethod 39748 0x02de2588 code [0x02de26b0, 0x02de27c4]
+
+GC Heap History (10 events):
+Event: 57818.314 GC heap before
+{Heap before GC invocations=254 (full 202):
+ def new generation   total 157248K, used 157247K [0x04e00000, 0x0f8a0000, 0x0f8a0000)
+  eden space 139776K, 100% used [0x04e00000, 0x0d680000, 0x0d680000)
+  from space 17472K,  99% used [0x0e790000, 0x0f89ffb0, 0x0f8a0000)
+  to   space 17472K,   0% used [0x0d680000, 0x0d680000, 0x0e790000)
+ tenured generation   total 349568K, used 349567K [0x0f8a0000, 0x24e00000, 0x24e00000)
+   the space 349568K,  99% used [0x0f8a0000, 0x24dffff8, 0x24e00000, 0x24e00000)
+ Metaspace       used 25388K, capacity 25915K, committed 25984K, reserved 25984K
+Event: 57819.007 GC heap after
+Heap after GC invocations=255 (full 203):
+ def new generation   total 157248K, used 157237K [0x04e00000, 0x0f8a0000, 0x0f8a0000)
+  eden space 139776K, 100% used [0x04e00000, 0x0d680000, 0x0d680000)
+  from space 17472K,  99% used [0x0e790000, 0x0f89d5e0, 0x0f8a0000)
+  to   space 17472K,   0% used [0x0d680000, 0x0d680000, 0x0e790000)
+ tenured generation   total 349568K, used 349567K [0x0f8a0000, 0x24e00000, 0x24e00000)
+   the space 349568K,  99% used [0x0f8a0000, 0x24dffff8, 0x24e00000, 0x24e00000)
+ Metaspace       used 25388K, capacity 25915K, committed 25984K, reserved 25984K
+}
+Event: 57819.008 GC heap before
+{Heap before GC invocations=255 (full 203):
+ def new generation   total 157248K, used 157247K [0x04e00000, 0x0f8a0000, 0x0f8a0000)
+  eden space 139776K, 100% used [0x04e00000, 0x0d680000, 0x0d680000)
+  from space 17472K,  99% used [0x0e790000, 0x0f89ff88, 0x0f8a0000)
+  to   space 17472K,   0% used [0x0d680000, 0x0d680000, 0x0e790000)
+ tenured generation   total 349568K, used 349567K [0x0f8a0000, 0x24e00000, 0x24e00000)
+   the space 349568K,  99% used [0x0f8a0000, 0x24dffff8, 0x24e00000, 0x24e00000)
+ Metaspace       used 25388K, capacity 25915K, committed 25984K, reserved 25984K
+Event: 57819.708 GC heap after
+Heap after GC invocations=256 (full 204):
+ def new generation   total 157248K, used 157237K [0x04e00000, 0x0f8a0000, 0x0f8a0000)
+  eden space 139776K, 100% used [0x04e00000, 0x0d680000, 0x0d680000)
+  from space 17472K,  99% used [0x0e790000, 0x0f89d618, 0x0f8a0000)
+  to   space 17472K,   0% used [0x0d680000, 0x0d680000, 0x0e790000)
+ tenured generation   total 349568K, used 349567K [0x0f8a0000, 0x24e00000, 0x24e00000)
+   the space 349568K,  99% used [0x0f8a0000, 0x24dffff8, 0x24e00000, 0x24e00000)
+ Metaspace       used 25388K, capacity 25915K, committed 25984K, reserved 25984K
+}
+Event: 57819.708 GC heap before
+{Heap before GC invocations=256 (full 204):
+ def new generation   total 157248K, used 157247K [0x04e00000, 0x0f8a0000, 0x0f8a0000)
+  eden space 139776K, 100% used [0x04e00000, 0x0d680000, 0x0d680000)
+  from space 17472K,  99% used [0x0e790000, 0x0f89fff0, 0x0f8a0000)
+  to   space 17472K,   0% used [0x0d680000, 0x0d680000, 0x0e790000)
+ tenured generation   total 349568K, used 349567K [0x0f8a0000, 0x24e00000, 0x24e00000)
+   the space 349568K,  99% used [0x0f8a0000, 0x24dffff8, 0x24e00000, 0x24e00000)
+ Metaspace       used 25388K, capacity 25915K, committed 25984K, reserved 25984K
+Event: 57820.410 GC heap after
+Heap after GC invocations=257 (full 205):
+ def new generation   total 157248K, used 157214K [0x04e00000, 0x0f8a0000, 0x0f8a0000)
+  eden space 139776K, 100% used [0x04e00000, 0x0d680000, 0x0d680000)
+  from space 17472K,  99% used [0x0e790000, 0x0f8979e0, 0x0f8a0000)
+  to   space 17472K,   0% used [0x0d680000, 0x0d680000, 0x0e790000)
+ tenured generation   total 349568K, used 349567K [0x0f8a0000, 0x24e00000, 0x24e00000)
+   the space 349568K,  99% used [0x0f8a0000, 0x24dffff8, 0x24e00000, 0x24e00000)
+ Metaspace       used 25388K, capacity 25915K, committed 25984K, reserved 25984K
+}
+Event: 57820.411 GC heap before
+{Heap before GC invocations=257 (full 205):
+ def new generation   total 157248K, used 157215K [0x04e00000, 0x0f8a0000, 0x0f8a0000)
+  eden space 139776K, 100% used [0x04e00000, 0x0d680000, 0x0d680000)
+  from space 17472K,  99% used [0x0e790000, 0x0f897dd0, 0x0f8a0000)
+  to   space 17472K,   0% used [0x0d680000, 0x0d680000, 0x0e790000)
+ tenured generation   total 349568K, used 349567K [0x0f8a0000, 0x24e00000, 0x24e00000)
+   the space 349568K,  99% used [0x0f8a0000, 0x24dffff8, 0x24e00000, 0x24e00000)
+ Metaspace       used 25388K, capacity 25915K, committed 25984K, reserved 25984K
+Event: 57821.108 GC heap after
+Heap after GC invocations=258 (full 206):
+ def new generation   total 157248K, used 157214K [0x04e00000, 0x0f8a0000, 0x0f8a0000)
+  eden space 139776K, 100% used [0x04e00000, 0x0d680000, 0x0d680000)
+  from space 17472K,  99% used [0x0e790000, 0x0f897b38, 0x0f8a0000)
+  to   space 17472K,   0% used [0x0d680000, 0x0d680000, 0x0e790000)
+ tenured generation   total 349568K, used 349567K [0x0f8a0000, 0x24e00000, 0x24e00000)
+   the space 349568K,  99% used [0x0f8a0000, 0x24dffff8, 0x24e00000, 0x24e00000)
+ Metaspace       used 25388K, capacity 25915K, committed 25984K, reserved 25984K
+}
+Event: 57821.108 GC heap before
+{Heap before GC invocations=258 (full 206):
+ def new generation   total 157248K, used 157214K [0x04e00000, 0x0f8a0000, 0x0f8a0000)
+  eden space 139776K, 100% used [0x04e00000, 0x0d680000, 0x0d680000)
+  from space 17472K,  99% used [0x0e790000, 0x0f897b38, 0x0f8a0000)
+  to   space 17472K,   0% used [0x0d680000, 0x0d680000, 0x0e790000)
+ tenured generation   total 349568K, used 349567K [0x0f8a0000, 0x24e00000, 0x24e00000)
+   the space 349568K,  99% used [0x0f8a0000, 0x24dffff8, 0x24e00000, 0x24e00000)
+ Metaspace       used 25388K, capacity 25915K, committed 25984K, reserved 25984K
+Event: 57821.804 GC heap after
+Heap after GC invocations=259 (full 207):
+ def new generation   total 157248K, used 157214K [0x04e00000, 0x0f8a0000, 0x0f8a0000)
+  eden space 139776K, 100% used [0x04e00000, 0x0d680000, 0x0d680000)
+  from space 17472K,  99% used [0x0e790000, 0x0f897b38, 0x0f8a0000)
+  to   space 17472K,   0% used [0x0d680000, 0x0d680000, 0x0e790000)
+ tenured generation   total 349568K, used 349567K [0x0f8a0000, 0x24e00000, 0x24e00000)
+   the space 349568K,  99% used [0x0f8a0000, 0x24dffff8, 0x24e00000, 0x24e00000)
+ Metaspace       used 25388K, capacity 25915K, committed 25984K, reserved 25984K
+}
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 57821.805 Thread 0x283b5800 Exception <a 'java/io/IOException'> (0x0f89d398) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u191\11896\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 57821.805 Thread 0x283b5800 Exception <a 'java/io/IOException'> (0x0f89db60) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u191\11896\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 57821.805 Thread 0x283b5800 Exception <a 'java/io/IOException'> (0x0f89dec0) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u191\11896\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 57821.805 Thread 0x283b5800 Exception <a 'java/io/IOException'> (0x0f89e108) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u191\11896\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 57821.805 Thread 0x283b5800 Exception <a 'java/io/IOException'> (0x0f89e9a8) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u191\11896\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 57821.805 Thread 0x283b5800 Exception <a 'java/io/IOException'> (0x0f89ed08) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u191\11896\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 57821.805 Thread 0x283b5800 Exception <a 'java/io/IOException'> (0x0f89ef50) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u191\11896\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 57821.805 Thread 0x283b5800 Exception <a 'java/io/IOException'> (0x0f89f778) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u191\11896\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 57821.805 Thread 0x283b5800 Exception <a 'java/io/IOException'> (0x0f89fad8) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u191\11896\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 57821.806 Thread 0x283b5800 Exception <a 'java/io/IOException'> (0x0f89fd20) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u191\11896\hotspot\src\share\vm\prims\jni.cpp, line 709]
+
+Events (10 events):
+Event: 57818.313 Executing VM operation: GenCollectForAllocation done
+Event: 57818.313 Executing VM operation: GenCollectForAllocation
+Event: 57819.007 Executing VM operation: GenCollectForAllocation done
+Event: 57819.007 Executing VM operation: GenCollectForAllocation
+Event: 57819.708 Executing VM operation: GenCollectForAllocation done
+Event: 57819.708 Executing VM operation: GenCollectForAllocation
+Event: 57820.410 Executing VM operation: GenCollectForAllocation done
+Event: 57820.411 Executing VM operation: GenCollectForAllocation
+Event: 57821.804 Executing VM operation: GenCollectForAllocation done
+Event: 57821.806 Executing VM operation: GenCollectForAllocation
+
+
+Dynamic libraries:
+0x009c0000 - 0x009f3000 	C:\Program Files\arduino-nightly\java\bin\javaw.exe
+0x76fa0000 - 0x77143000 	C:\Windows\SYSTEM32\ntdll.dll
+0x76560000 - 0x76650000 	C:\Windows\System32\KERNEL32.DLL
+0x76340000 - 0x76554000 	C:\Windows\System32\KERNELBASE.dll
+0x75420000 - 0x7549a000 	C:\Windows\System32\ADVAPI32.dll
+0x75890000 - 0x7594f000 	C:\Windows\System32\msvcrt.dll
+0x75950000 - 0x759c5000 	C:\Windows\System32\sechost.dll
+0x767c0000 - 0x76880000 	C:\Windows\System32\RPCRT4.dll
+0x76030000 - 0x761c6000 	C:\Windows\System32\USER32.dll
+0x755c0000 - 0x755d8000 	C:\Windows\System32\win32u.dll
+0x76f00000 - 0x76f23000 	C:\Windows\System32\GDI32.dll
+0x75630000 - 0x7570c000 	C:\Windows\System32\gdi32full.dll
+0x76200000 - 0x7627b000 	C:\Windows\System32\msvcp_win.dll
+0x754a0000 - 0x755c0000 	C:\Windows\System32\ucrtbase.dll
+0x74c10000 - 0x74e20000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.844_none_11adecdf30011423\COMCTL32.dll
+0x761d0000 - 0x761f5000 	C:\Windows\System32\IMM32.DLL
+0x53080000 - 0x5313f000 	C:\Program Files\arduino-nightly\java\bin\msvcr100.dll
+0x52ca0000 - 0x53073000 	C:\Program Files\arduino-nightly\java\bin\client\jvm.dll
+0x76c70000 - 0x76c76000 	C:\Windows\System32\PSAPI.DLL
+0x74e20000 - 0x74e48000 	C:\Windows\SYSTEM32\WINMM.dll
+0x73e40000 - 0x73e48000 	C:\Windows\SYSTEM32\VERSION.dll
+0x72c20000 - 0x72c28000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x76970000 - 0x769d3000 	C:\Windows\System32\WS2_32.dll
+0x62490000 - 0x624c0000 	C:\Program Files\arduino-nightly\java\bin\splashscreen.dll
+0x72450000 - 0x724c4000 	C:\Windows\system32\uxtheme.dll
+0x769e0000 - 0x76c61000 	C:\Windows\System32\combase.dll
+0x62210000 - 0x6221c000 	C:\Program Files\arduino-nightly\java\bin\verify.dll
+0x57580000 - 0x575a2000 	C:\Program Files\arduino-nightly\java\bin\java.dll
+0x75710000 - 0x757e4000 	C:\Windows\System32\MSCTF.dll
+0x759d0000 - 0x75a66000 	C:\Windows\System32\OLEAUT32.dll
+0x621f0000 - 0x62204000 	C:\Program Files\arduino-nightly\java\bin\zip.dll
+0x74900000 - 0x7490f000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x753c0000 - 0x7541f000 	C:\Windows\System32\bcryptPrimitives.dll
+0x715d0000 - 0x71689000 	C:\Windows\SYSTEM32\textinputframework.dll
+0x712b0000 - 0x7152e000 	C:\Windows\System32\CoreUIComponents.dll
+0x75800000 - 0x75887000 	C:\Windows\System32\SHCORE.dll
+0x71530000 - 0x715cb000 	C:\Windows\System32\CoreMessaging.dll
+0x74270000 - 0x74299000 	C:\Windows\SYSTEM32\ntmarta.dll
+0x72060000 - 0x7213b000 	C:\Windows\SYSTEM32\wintypes.dll
+0x75a70000 - 0x76023000 	C:\Windows\System32\SHELL32.dll
+0x742f0000 - 0x748f9000 	C:\Windows\SYSTEM32\windows.storage.dll
+0x742c0000 - 0x742e4000 	C:\Windows\SYSTEM32\Wldp.dll
+0x755e0000 - 0x75625000 	C:\Windows\System32\shlwapi.dll
+0x742a0000 - 0x742b8000 	C:\Windows\SYSTEM32\profapi.dll
+0x61940000 - 0x619b3000 	C:\Program Files\arduino-nightly\lib\listSerialsj.dll
+0x74e70000 - 0x752a5000 	C:\Windows\System32\SETUPAPI.dll
+0x76300000 - 0x7633b000 	C:\Windows\System32\cfgmgr32.dll
+0x75340000 - 0x75359000 	C:\Windows\System32\bcrypt.dll
+0x58820000 - 0x5883d000 	C:\Program Files\arduino-nightly\lib\jnidispatch-4.2.2-win32-x86.dll
+0x76880000 - 0x76963000 	C:\Windows\System32\Ole32.dll
+0x57560000 - 0x57575000 	C:\Program Files\arduino-nightly\java\bin\net.dll
+0x74030000 - 0x74082000 	C:\Windows\system32\mswsock.dll
+0x53cb0000 - 0x53cbf000 	C:\Program Files\arduino-nightly\java\bin\nio.dll
+0x52b50000 - 0x52c97000 	C:\Program Files\arduino-nightly\java\bin\awt.dll
+0x6c1b0000 - 0x6c24f000 	C:\Windows\SYSTEM32\apphelp.dll
+0x71ed0000 - 0x71ef6000 	C:\Windows\system32\DWMAPI.DLL
+0x53c70000 - 0x53ca9000 	C:\Program Files\arduino-nightly\java\bin\fontmanager.dll
+0x52a40000 - 0x52b44000 	C:\Windows\system32\opengl32.dll
+0x535f0000 - 0x5362f000 	C:\Windows\SYSTEM32\GLU32.dll
+0x535b0000 - 0x535e2000 	C:\Program Files\arduino-nightly\java\bin\t2k.dll
+0x535a0000 - 0x535aa000 	C:\Program Files\arduino-nightly\java\bin\management.dll
+0x73ff0000 - 0x74001000 	C:\Windows\system32\napinsp.dll
+0x73fd0000 - 0x73fe6000 	C:\Windows\system32\pnrpnsp.dll
+0x73fc0000 - 0x73fd0000 	C:\Windows\system32\wshbth.dll
+0x73fa0000 - 0x73fb6000 	C:\Windows\system32\NLAapi.dll
+0x74a60000 - 0x74a92000 	C:\Windows\SYSTEM32\IPHLPAPI.DLL
+0x74160000 - 0x741f2000 	C:\Windows\SYSTEM32\DNSAPI.dll
+0x757f0000 - 0x757f7000 	C:\Windows\System32\NSI.dll
+0x73f90000 - 0x73f9e000 	C:\Windows\System32\winrnr.dll
+0x73f20000 - 0x73f78000 	C:\Windows\System32\fwpuclnt.dll
+0x73f10000 - 0x73f18000 	C:\Windows\System32\rasadhlp.dll
+0x740d0000 - 0x740e4000 	C:\Windows\SYSTEM32\dhcpcsvc6.DLL
+0x74010000 - 0x74026000 	C:\Windows\SYSTEM32\dhcpcsvc.DLL
+0x73ef0000 - 0x73f03000 	C:\Windows\SYSTEM32\CRYPTSP.dll
+0x73ec0000 - 0x73eef000 	C:\Windows\system32\rsaenh.dll
+0x73e60000 - 0x73e85000 	C:\Windows\SYSTEM32\USERENV.dll
+0x73eb0000 - 0x73eba000 	C:\Windows\SYSTEM32\CRYPTBASE.dll
+0x71920000 - 0x71944000 	C:\Windows\SYSTEM32\DEVOBJ.dll
+0x76650000 - 0x76697000 	C:\Windows\System32\WINTRUST.dll
+0x766b0000 - 0x767b1000 	C:\Windows\System32\CRYPT32.dll
+0x71720000 - 0x7172e000 	C:\Windows\SYSTEM32\MSASN1.dll
+0x53510000 - 0x53530000 	C:\Program Files\arduino-nightly\java\bin\sunec.dll
+0x53590000 - 0x53599000 	C:\Program Files\arduino-nightly\java\bin\sunmscapi.dll
+0x529d0000 - 0x52a39000 	C:\Program Files\arduino-nightly\msvcp100.dll
+0x52910000 - 0x529ce000 	C:\Program Files\arduino-nightly\msvcr100.dll
+0x297a0000 - 0x297d2000 	C:\Program Files\arduino-nightly\lib\AStylej.dll
+0x534e0000 - 0x53504000 	C:\Program Files\arduino-nightly\java\bin\dcpr.dll
+0x76280000 - 0x762fe000 	C:\Windows\System32\clbcatq.dll
+0x6ebe0000 - 0x6ed51000 	C:\Windows\SYSTEM32\WindowsCodecs.dll
+0x6f2d0000 - 0x6f301000 	C:\Windows\system32\dataexchange.dll
+0x6ef80000 - 0x6f160000 	C:\Windows\system32\d3d11.dll
+0x6f160000 - 0x6f2c5000 	C:\Windows\system32\dcomp.dll
+0x70f20000 - 0x70fe3000 	C:\Windows\system32\dxgi.dll
+0x72140000 - 0x722cf000 	C:\Windows\system32\twinapi.appcore.dll
+0x64000000 - 0x6401b000 	C:\Program Files\arduino-nightly\lib\jSSC-2.8_x86.dll
+0x717b0000 - 0x71869000 	C:\Windows\System32\AppXDeploymentClient.dll
+0x522c0000 - 0x52905000 	C:\Windows\SYSTEM32\ig7icd32.dll
+0x64470000 - 0x647eb000 	C:\Windows\SYSTEM32\igdusc32.dll
+0x73e50000 - 0x73e5f000 	C:\Windows\SYSTEM32\WTSAPI32.dll
+0x62e80000 - 0x62e9b000 	C:\Windows\SYSTEM32\edputil.dll
+0x72a80000 - 0x72c08000 	C:\Windows\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dsun.java2d.d3d=false -Djna.nosys=true -Djna.nounpack=true -Djna.boot.library.name=jnidispatch-4.2.2-win32-x86 -Djna.boot.library.path=C:\Program Files\arduino-nightly/lib -Djssc.library.path=C:\Program Files\arduino-nightly/lib -DAPP_DIR=C:\Program Files\arduino-nightly -Xms128M -Xmx512M -Dfile.encoding=UTF8 -Djava.net.preferIPv4Stack=true 
+java_command: processing.app.Base C:\Users\Roni Rodrigues\OneDrive\Documentos\Arduino\versões LoRa\OLED_LoRa_Reciver\OLED_LoRa_Reciver.ino
+java_class_path (initial): C:\Program Files\arduino-nightly\lib\apple.jar;C:\Program Files\arduino-nightly\lib\arduino-core.jar;C:\Program Files\arduino-nightly\lib\batik-1.8.jar;C:\Program Files\arduino-nightly\lib\batik-anim-1.8.jar;C:\Program Files\arduino-nightly\lib\batik-awt-util-1.8.jar;C:\Program Files\arduino-nightly\lib\batik-bridge-1.8.jar;C:\Program Files\arduino-nightly\lib\batik-codec-1.8.jar;C:\Program Files\arduino-nightly\lib\batik-css-1.8.jar;C:\Program Files\arduino-nightly\lib\batik-dom-1.8.jar;C:\Program Files\arduino-nightly\lib\batik-ext-1.8.jar;C:\Program Files\arduino-nightly\lib\batik-gvt-1.8.jar;C:\Program Files\arduino-nightly\lib\batik-parser-1.8.jar;C:\Program Files\arduino-nightly\lib\batik-rasterizer-1.8.jar;C:\Program Files\arduino-nightly\lib\batik-script-1.8.jar;C:\Program Files\arduino-nightly\lib\batik-squiggle-1.8.jar;C:\Program Files\arduino-nightly\lib\batik-svg-dom-1.8.jar;C:\Program Files\arduino-nightly\lib\batik-svgpp-1.8.jar;C:\Program Files\arduino-nightly\lib\batik-transcoder-1.8.jar;C:\Program Files\arduino-nightly\lib\batik-util-1.8.jar;C:\Program Files\arduino-nightly\lib\batik-xml-1.8.jar;C:\Program Files\arduino-nightly\lib\bcpg-jdk15on-152.jar;C:\Program Files\arduino-nightly\lib\bcprov-jdk15on-152.jar;C:\Program Files\arduino-nightly\lib\commons-codec-1.7.jar;C:\Program Files\arduino-nightly\lib\commons-compress-1.8.jar;C:\Program Files\arduino-nightly\lib\commons-exec-1.1.jar;C:\Program Files\arduino-nightly\lib\commons-httpclient-3.1.jar;C:\Program Files\arduino-nightly\lib\commons-lang3-3.8.1.jar;C:\Program Files\arduino-nightly\lib\commons-logging-1.0.4.jar;C:\Program Files\arduino-nightly\lib\commons-net-3.3.jar;C:\Program Files\arduino-nightly\lib\commons-io-2.6.jar;C:\Program Files\arduino-nightly\lib\jackson-annotations-2.9.5.jar;C:\Program Files\arduino-nightly\lib\jackson-core-2.9.5.jar;C:\Program Files\arduino-nightly\lib\jackson-databind-2.9.5.jar;C:\Program Files\arduino-nightly\lib\java-semver-0.8
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\Roni Rodrigues\AppData\Local\Microsoft\WindowsApps;C:\Users\Roni Rodrigues\AppData\Roaming\npm;C:\Users\Roni Rodrigues\AppData\Local\atom\bin;C:\Program Files\heroku\bin;C:\Program Files\arduino-nightly\java\bin
+USERNAME=Roni Rodrigues
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 19041 (10.0.19041.1023)
+
+CPU:total 4 (initial active 4) (4 cores per cpu, 1 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, clmul, erms, tsc, tscinvbit, tscinv
+
+Memory: 4k page, physical 6162496k(976328k free), swap 16551812k(6669624k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.191-b12) for windows-x86 JRE (1.8.0_191-b12), built on Oct  6 2018 08:34:23 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Thu Jul 01 09:37:17 2021
+elapsed time: 57821 seconds (0d 16h 3m 41s)
+
